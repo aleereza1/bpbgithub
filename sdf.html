@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+            position: relative;
+        }
+        
+        #anime {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="animating()">play</button>
+    <div id="container">
+        <div id="anime">
+
+        </div>
+    </div>
+</body>
+<script>
+    function animating() {
+        var squar = document.getElementById('anime');
+        var pos = 0;
+        var id = setInterval(frame, 5)
+
+        function frame() {
+            if (pos == 250)
+                clearInterval(id);
+            else
+                pos++;
+            squar.style.top = pos + "px";
+            squar.style.left = pos + "px";
+        }
+    }
+</script>
+
+</html>
